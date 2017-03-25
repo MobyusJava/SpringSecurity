@@ -17,6 +17,16 @@
 	<li role="presentation" ><a href="#">Mobyus</a></li>
 	<li role="presentation"><a href="/">Home</a></li>
 	<li role="presentation" class="active"><a href="#">Users</a></li>
+	<c:if test="${not empty currentUser}">
+		<li role="presentation">
+			<form action="/logout" method="post">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			 <span class="input-group-btn">
+		        <button class="btn btn-default" type="submit">Log out</button>
+		      </span>
+			</form>
+		</li>
+	</c:if>
 	</ul>
 </div>
      <div class="page-header" id="banner">

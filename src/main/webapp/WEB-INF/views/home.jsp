@@ -31,7 +31,7 @@
 					<form action="/logout" method="post">
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					 <span class="input-group-btn">
-				        <button class="btn btn-default" type="button">Log out</button>
+				        <button class="btn btn-default" type="submit">Log out</button>
 				      </span>
 					</form>
 				</li>

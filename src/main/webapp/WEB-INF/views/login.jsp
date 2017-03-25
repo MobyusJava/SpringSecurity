@@ -18,6 +18,16 @@
 	<li role="presentation" ><a href="#">Mobyus</a></li>
 	<li role="presentation"><a href="/">Home</a></li>
 	<li role="presentation" class="active"><a href="/login">Log in</a></li>
+	<c:if test="${not empty currentUser}">
+		<li role="presentation">
+			<form action="/logout" method="post">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			 <span class="input-group-btn">
+		        <button class="btn btn-default" type="submit">Log out</button>
+		      </span>
+			</form>
+		</li>
+	</c:if>
 	</ul>
 </div>
 
@@ -45,6 +55,12 @@
 			        <label class="col-lg-2 control-label" for="password">Password</label>
 			        <div class="col-lg-6">
 			        <input class="form-control" type="password" name="password" id="password" required/>
+			    	</div>
+			    </div>
+			    <div class="form-group">
+			        <label class="col-lg-2 control-label" for="remember-me">Remember me</label>
+			        <div class="col-lg-6">
+			        <input class="form-control" type="checkbox" name="remember-me" id="remember-me" required/>
 			    	</div>
 			    </div>
 			    <div class="form-group">
